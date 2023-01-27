@@ -10,7 +10,17 @@ class Expert:
             self.dialogue = json.load(d_file)
 
     def start(self):
-        pass
+        keep_going = True
+        print(self.dialogue["intro"] )
+        while keep_going:
+            r1 = input(f'\n{self.dialogue["q1"]}\n').lower()
+            r2 = 1 if input(f'\n{self.dialogue["q2"]}\n').lower()[0] == "y" else 0
+            print(r2)
+            print(r1)
+            keep_going = input(f'{self.dialogue["repeat"]}\n').upper()[0] == "Y"
+
+        print(f'\n{self.dialogue["farewell"]}')    
+
 
 
 def main():
