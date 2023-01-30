@@ -17,6 +17,20 @@ class Expert:
             r2 = 1 if input(f'\n{self.dialogue["q2"]}\n').lower()[0] == "y" else 0
             print(r2)
             print(r1)
+
+            # create key from input
+
+            # get fruit dictionary from key
+
+            # if the key exists print the fruit name
+
+            # else tell the user the fruit was not found and to ask for the name of the fruit
+
+                # base on the user input create a dictionary and add it to the in memory dictionary with the fruit key
+
+                # write the in memory dictionary to file.
+
+                
             keep_going = input(f'{self.dialogue["repeat"]}\n').upper()[0] == "Y"
 
         print(f'\n{self.dialogue["farewell"]}')    
