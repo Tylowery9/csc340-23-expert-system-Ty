@@ -12,7 +12,7 @@ class Expert:
     def start(self):
         keep_going = True
         has_contributed = False
-        print(self.dialogue["intro"] )
+        print(self.dialogue["intro"])
         while keep_going:
             r1 = input(f'\n{self.dialogue["q1"]}\n').lower()
             r2 = 1 if input(f'\n{self.dialogue["q2"]}\n').lower()[0] == "y" else 0
@@ -21,19 +21,20 @@ class Expert:
 
             if fruit_value:
                 print(f'\n{self.dialogue["conclusion"]} {fruit_value.get("name")}.\n')
-            else:
+            else: 
                 new_fruit = input(f'\n{self.dialogue["not_found"]}\n').lower()
-                self.kb[fruit_key] = {"name": new_fruit}
+                self.kb[fruit_key] = {"name" : new_fruit}
                 with open(self.kb_path, 'w') as kb_file:
                     json.dump(self.kb, kb_file)
                 has_contributed = True
 
             keep_going = input(f'{self.dialogue["repeat"]}\n').upper()[0] == "Y"
 
-        print(f'\n{self.dialogue["farewell"]}') 
+        print(f'\n{self.dialogue["farewell"]}')
         if has_contributed:
-            print(self.dialogue["contribution"])   
+            print(self.dialogue["contribution"])
 
+    
 
 
 def main():
